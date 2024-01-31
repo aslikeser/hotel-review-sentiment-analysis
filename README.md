@@ -15,24 +15,23 @@ Perform EDA on the data and mention 3-4 observations from which you can draw act
 ## Preprocessing
 Next, the text data needs to be processed for modeling.
 
-Split the data into train and test sets and transform the positive and negative review columns using a CountVectorizer. Consider the following:
-What tokenizer and text cleaning steps do you include?   
-Using the vectorizer, maximize the number of features at 500 and make sure that tokens used <10 times are dropped from the vocabulary.
-This process may be done on the positive and negative review columns separately and then the resulting arrays merged with the original numeric features to form the final train and test data frames ready for modeling. In your column names, make sure you mark which words are coming from the positive vs negative reviews (you can use a prefix such as pos_ and neg_).
+Split the data into train and test sets and transform the positive and negative review columns using a CountVectorizer. 
 
-Modelling
+Consider the following:
+- What tokenizer and text cleaning steps do you include?   
+- Using the vectorizer, maximize the number of features at 500 and make sure that tokens used <10 times are dropped from the vocabulary.
+- This process may be done on the positive and negative review columns separately and then the resulting arrays merged with the original numeric features to form the final train and test data frames ready for modeling.
+- In your column names, make sure you mark which words are coming from the positive vs negative reviews (you can use a prefix such as pos_ and neg_).
+
+## Modelling
 As the data is now ready for modeling, we will be creating two separate models with optimization and evaluation of each.
 
-Fit a logistic regression model on the data and analyze the test and train accuracy. Find the top 20 words from the positive reviews that are most predictive of a positive sentiment (Reviewer_Score = 1). Similarly, find the top 20 words from the negative reviews that are most predictive of negative sentiment (Reviewer_Score = 0). What actionable insights can you draw from these?
+- Fit a logistic regression model on the data and analyze the test and train accuracy. Find the top 20 words from the positive reviews that are most predictive of a positive sentiment (Reviewer_Score = 1). Similarly, find the top 20 words from the negative reviews that are most predictive of negative sentiment (Reviewer_Score = 0). What actionable insights can you draw from these?
 
-Using a pipeline, combine PCA with a decision tree classifier.
+- Using a pipeline, combine PCA with a decision tree classifier.
+  - Optimize at least 3 hyperparameters including the maximum tree depth and the minimum number of data points required on each leaf node.
+  - You can use 20 principle components.
+  - The best parameters should be found using 5-fold cross-validation.
+  - Contrast the best results here with the logistic regression model and provide any insights that you may draw from the results.
 
-Optimize at least 3 hyperparameters including the maximum tree depth and the minimum number of data points required on each leaf node.
-You can use 20 principle components.
-The best parameters should be found using 5-fold cross-validation.
-Contrast the best results here with the logistic regression model and provide any insights that you may draw from the results.
-
-For your best-performing model, conduct a more in-depth evaluation by analyzing the confusion matrix and commenting on the model errors and metrics such as precision and recall.
-Requirements
-Please submit your Jupyter notebook which should include commented code and extensive markdown cells explaining your process and insights. Make sure to add a table of contents, introduction, proper section headers, and a conclusion section. Your communication in the markdown cells and the code cell outputs should allow anyone to understand your process and findings without the need to read the code.
-
+- For your best-performing model, conduct a more in-depth evaluation by analyzing the confusion matrix and commenting on the model errors and metrics such as precision and recall.
